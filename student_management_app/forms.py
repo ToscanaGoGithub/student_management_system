@@ -11,12 +11,11 @@ class DateInput(forms.DateInput):
     input_type = "date"
 
 class AddStudentForm(forms.Form):
-    email=forms.EmailField(label="Email",max_length=50,widget=forms.EmailInput(attrs={"class":"form-control","autocomplete":"off"}))
-    password=forms.CharField(label="Password",max_length=50,widget=forms.PasswordInput(attrs={"class":"form-control"}))
-    first_name=forms.CharField(label="First Name",max_length=50,widget=forms.TextInput(attrs={"class":"form-control"}))
-    last_name=forms.CharField(label="Last Name",max_length=50,widget=forms.TextInput(attrs={"class":"form-control"}))
-    username=forms.CharField(label="Username",max_length=50,widget=forms.TextInput(attrs={"class":"form-control","autocomplete":"off"}))
-    address=forms.CharField(label="Address",max_length=50,widget=forms.TextInput(attrs={"class":"form-control"}))
+    email=forms.EmailField(label="邮箱",max_length=50,widget=forms.EmailInput(attrs={"class":"form-control","autocomplete":"off"}))
+    password=forms.CharField(label="密码",max_length=50,widget=forms.PasswordInput(attrs={"class":"form-control"}))
+
+    username=forms.CharField(label="用户名",max_length=50,widget=forms.TextInput(attrs={"class":"form-control","autocomplete":"off"}))
+    address=forms.CharField(label="家庭地址",max_length=50,widget=forms.TextInput(attrs={"class":"form-control"}))
     course_list=[]
     try:
         courses=Courses.objects.all()
@@ -42,10 +41,10 @@ class AddStudentForm(forms.Form):
         ("Female","Female")
     )
 
-    course=forms.ChoiceField(label="Course",choices=course_list,widget=forms.Select(attrs={"class":"form-control"}))
-    sex=forms.ChoiceField(label="Sex",choices=gender_choice,widget=forms.Select(attrs={"class":"form-control"}))
-    session_year_id=forms.ChoiceField(label="Session Year",choices=session_list,widget=forms.Select(attrs={"class":"form-control"}))
-    profile_pic=forms.FileField(label="Profile Pic",max_length=50,widget=forms.FileInput(attrs={"class":"form-control"}))
+    course=forms.ChoiceField(label="课程名",choices=course_list,widget=forms.Select(attrs={"class":"form-control"}))
+    sex=forms.ChoiceField(label="性别",choices=gender_choice,widget=forms.Select(attrs={"class":"form-control"}))
+    session_year_id=forms.ChoiceField(label="学年",choices=session_list,widget=forms.Select(attrs={"class":"form-control"}))
+    profile_pic=forms.FileField(label="证件照",max_length=50,widget=forms.FileInput(attrs={"class":"form-control"}))
 
 class EditStudentForm(forms.Form):
     email=forms.EmailField(label="Email",max_length=50,widget=forms.EmailInput(attrs={"class":"form-control"}))

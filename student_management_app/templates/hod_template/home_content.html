@@ -1,6 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% block page_title %}
-Home
+主页
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -13,12 +13,12 @@ Home
               <div class="inner">
                 <h3>{{ student_count }}</h3>
 
-                <p>Total Students</p>
+                <p>学生数量</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{% url 'manage_student' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'manage_student' %}" class="small-box-footer">更多<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -28,12 +28,12 @@ Home
               <div class="inner">
                 <h3>{{ staff_count }}</h3>
 
-                <p>Total Staffs</p>
+                <p>教师数量</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{% url 'manage_staff' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'manage_staff' %}" class="small-box-footer">更多<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -43,12 +43,12 @@ Home
               <div class="inner">
                 <h3>{{ course_count }}</h3>
 
-                <p>Total Course</p>
+                <p>课程数量</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{% url 'manage_course' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'manage_course' %}" class="small-box-footer">更多<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -58,12 +58,12 @@ Home
               <div class="inner">
                 <h3>{{ subject_count }}</h3>
 
-                <p>Total Subject</p>
+                <p>学科数量</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{% url 'manage_subject' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'manage_subject' %}" class="small-box-footer">更多<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -72,7 +72,7 @@ Home
               <div class="col-lg-6">
                 <div class="card card-danger">
                   <div class="card-header">
-                    <h3 class="card-title">Student and Staff Chart</h3>
+                    <h3 class="card-title">教师学生表</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -89,7 +89,7 @@ Home
               <div class="col-lg-6">
                    <div class="card card-success">
                   <div class="card-header">
-                    <h3 class="card-title">Total Subject in Each Courses</h3>
+                    <h3 class="card-title">学科数/课程</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -108,7 +108,7 @@ Home
               <div class="col-lg-6">
                  <div class="card card-info">
                   <div class="card-header">
-                    <h3 class="card-title">Total Student in Each Course</h3>
+                    <h3 class="card-title">学生数/课程</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -125,7 +125,7 @@ Home
               <div class="col-lg-6">
                  <div class="card card-warning">
                   <div class="card-header">
-                    <h3 class="card-title">Total Student in Each Subject</h3>
+                    <h3 class="card-title">学生数/学科</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -144,7 +144,7 @@ Home
               <div class="col-lg-12">
                   <div class="card card-success">
                   <div class="card-header">
-                    <h3 class="card-title">Staff Leaves vs Attendance</h3>
+                    <h3 class="card-title">教师出勤/缺勤对比图</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -165,7 +165,7 @@ Home
               <div class="col-lg-12">
                   <div class="card card-success">
                   <div class="card-header">
-                    <h3 class="card-title">Student Leaves vs Attendance</h3>
+                    <h3 class="card-title">学生出勤/缺勤对比图</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -192,8 +192,8 @@ Home
 
             var pieData        = {
                   labels: [
-                      'Students',
-                      'Staffs'
+                      '学生',
+                      '教师'
                   ],
                   datasets: [
                     {
@@ -299,7 +299,7 @@ Home
                           labels  : staff_name_list,
                           datasets: [
                             {
-                              label               : 'Leaves',
+                              label               : '缺勤',
                               backgroundColor     : 'rgba(60,141,188,0.9)',
                               borderColor         : 'rgba(60,141,188,0.8)',
                               pointRadius          : false,
@@ -310,7 +310,7 @@ Home
                               data                : attendance_absent_list_staff
                             },
                             {
-                              label               : 'Attendance',
+                              label               : '出勤',
                               backgroundColor     : 'rgba(210, 214, 222, 1)',
                               borderColor         : 'rgba(210, 214, 222, 1)',
                               pointRadius         : false,
@@ -348,7 +348,7 @@ Home
                           labels  : student_name_list,
                           datasets: [
                             {
-                              label               : 'Leaves',
+                              label               : '缺勤',
                               backgroundColor     : 'rgba(60,141,188,0.9)',
                               borderColor         : 'rgba(60,141,188,0.8)',
                               pointRadius          : false,
@@ -359,7 +359,7 @@ Home
                               data                : attendance_absent_list_student
                             },
                             {
-                              label               : 'Attendance',
+                              label               : '出勤',
                               backgroundColor     : 'rgba(210, 214, 222, 1)',
                               borderColor         : 'rgba(210, 214, 222, 1)',
                               pointRadius         : false,

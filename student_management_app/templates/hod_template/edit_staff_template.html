@@ -1,6 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% block page_title %}
-Edit Staff  | Username : {{ staff.admin.username }} |  #ID : {{ staff.admin.id }}
+教师编辑 | 教师名 : {{ staff.admin.username }} |  教师编号 : {{ staff.admin.id }}
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,7 +11,7 @@ Edit Staff  | Username : {{ staff.admin.username }} |  #ID : {{ staff.admin.id }
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Staff</h3>
+                <h3 class="card-title">教师编辑</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -19,24 +19,24 @@ Edit Staff  | Username : {{ staff.admin.username }} |  #ID : {{ staff.admin.id }
                   {% csrf_token %}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Email address</label>
+                    <label>邮箱</label>
                     <input type="email" class="form-control" name="email" placeholder="Enter email" value="{{ staff.admin.email }}">
                   </div>
-                   <div class="form-group">
+                   <div class="form-group" style="display:none">
                     <label>First Name</label>
-                    <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ staff.admin.first_name }}">
+                    <input type="hidden" class="form-control" placeholder="First Name" name="first_name" value="{{ staff.admin.first_name }}">
                   </div>
-                   <div class="form-group">
+                   <div class="form-group" style="display:none">
                     <label>Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{ staff.admin.last_name }}">
+                    <input type="hidden" class="form-control" placeholder="Last Name" name="last_name" value="{{ staff.admin.last_name }}">
                     <input type="hidden"  name="staff_id" value="{{ staff.admin.id }}">
                   </div>
                    <div class="form-group">
-                    <label>Username</label>
+                    <label>教师姓名</label>
                     <input type="text" class="form-control" placeholder="Username" name="username" value="{{ staff.admin.username }}">
                   </div>
                   <div class="form-group">
-                    <label>Address</label>
+                    <label>家庭住址</label>
                     <input type="text" class="form-control" placeholder="Address" name="address" value="{{ staff.address }}">
                   </div>
                       <div class="form-group">
@@ -56,7 +56,7 @@ Edit Staff  | Username : {{ staff.admin.username }} |  #ID : {{ staff.admin.id }
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Save Staff</button>
+                  <button type="submit" class="btn btn-primary btn-block">保存</button>
                 </div>
               </form>
             </div>

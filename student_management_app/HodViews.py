@@ -119,8 +119,8 @@ def add_student_save(request):
     else:
         form=AddStudentForm(request.POST,request.FILES)
         if form.is_valid():
-            first_name=form.cleaned_data["first_name"]
-            last_name=form.cleaned_data["last_name"]
+            first_name="aaa"
+            last_name="bbb"
             username=form.cleaned_data["username"]
             email=form.cleaned_data["email"]
             password=form.cleaned_data["password"]
