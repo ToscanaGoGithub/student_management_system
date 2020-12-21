@@ -1,6 +1,6 @@
 {% extends 'student_template/base_template.html' %}
 {% block page_title %}
-View Attendance Data
+查看出勤率
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,7 +11,7 @@ View Attendance Data
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">View Attendance</h3>
+                <h3 class="card-title">查看出勤</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -19,7 +19,7 @@ View Attendance Data
                 <div class="card-body">
                     {% csrf_token %}
                    <div class="form-group">
-                    <label>Subject </label>
+                    <label>科目 </label>
                     <select class="form-control" name="subject" id="subject">
                         {% for subject in subjects %}
                           <option value="{{ subject.id }}">{{ subject.subject_name }}</option>
@@ -29,13 +29,13 @@ View Attendance Data
                   <div class="row">
                   <div class="col-lg-6">
                   <div class="form-group">
-                    <label>Start Date</label>
+                    <label>开始日期</label>
                     <input type="date" name="start_date" class="form-control" placeholder="Start Date">
                   </div>
                   </div>
                   <div class="col-lg-6">
                   <div class="form-group">
-                    <label>End Date</label>
+                    <label>结束日期</label>
                     <input type="date" name="end_date" class="form-control" placeholder="End Date">
                   </div>
                   </div>
@@ -56,7 +56,7 @@ View Attendance Data
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block" id="fetch_student">Fetch Attendance</button>
+                  <button type="submit" class="btn btn-primary btn-block" id="fetch_student">查看</button>
                 </div>
 
                 <div id="student_data" class="card-footer">

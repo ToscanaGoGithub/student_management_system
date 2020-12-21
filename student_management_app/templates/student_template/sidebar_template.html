@@ -4,7 +4,7 @@
     <a href="" class="brand-link">
       <img src="{% static "dist/img/AdminLTELogo.png" %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Django</span>
     </a>
 
     <!-- Sidebar -->
@@ -29,7 +29,7 @@
             <a href="{{ student_home }}" class="nav-link {% if request.path == student_home %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Home
+                主页
               </p>
             </a>
           </li>
@@ -39,7 +39,7 @@
             <a href="{{ student_view_attendance }}" class="nav-link {% if request.path == student_view_attendance %} active {% endif %} {% if request.path == student_view_attendance_post %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                View Attendance
+                查看出勤
               </p>
             </a>
           </li>
@@ -48,7 +48,7 @@
             <a href="{{ student_apply_leave }}" class="nav-link {% if request.path == student_apply_leave %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Apply for Leave
+                请假申请
               </p>
             </a>
           </li>
@@ -57,7 +57,7 @@
             <a href="{{ student_feedback }}" class="nav-link {% if request.path == student_feedback %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Feedback Message
+                反馈信息
               </p>
             </a>
           </li>
@@ -66,7 +66,7 @@
             <a href="{{ student_view_result }}" class="nav-link {% if request.path == student_view_result %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Grade Card
+                查看成绩
               </p>
             </a>
           </li>
@@ -75,7 +75,7 @@
             <a href="{{ student_all_notification }}" class="nav-link {% if request.path == student_all_notification %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Notifications
+                查看通知
               </p>
             </a>
           </li>
