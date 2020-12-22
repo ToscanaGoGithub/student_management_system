@@ -1,6 +1,6 @@
 {% extends 'staff_template/base_template.html' %}
 {% block page_title %}
-Add Results
+提交成绩
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -13,7 +13,7 @@ Add Results
                  {% csrf_token %}
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Results</h3>
+                <h3 class="card-title">提交成绩</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -27,7 +27,7 @@ Add Results
                     </select>
                   </div>
                   <div class="form-group">
-                    <label>Session Year</label>
+                    <label>学年</label>
                     <select class="form-control" name="session_year" id="session_year">
                         {% for session_year in session_years %}
                           <option value="{{ session_year.id }}">{{ session_year.session_start_year }} TO {{ session_year.session_end_year }}</option>
@@ -51,7 +51,7 @@ Add Results
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary btn-block" id="fetch_student">Fetch Student</button>
+                  <button type="button" class="btn btn-primary btn-block" id="fetch_student">选择学生</button>
                 </div>
                 <div id="student_data" class="card-footer">
 
@@ -84,7 +84,7 @@ Add Results
             .done(function(response){
                 var json_data=JSON.parse(response);
                 console.log(json_data)
-                var div_data="<div class='form-group'><label>Student List</label><select class='student_list form-control' name='student_list'>";
+                var div_data="<div class='form-group'><label>学生列表</label><select class='student_list form-control' name='student_list'>";
                 for(key in json_data)
                 {
                     div_data+="<option value='"+json_data[key]['id']+"'>ID : "+json_data[key]['id']+" : "+json_data[key]['name']+"</option>";
@@ -93,15 +93,15 @@ Add Results
                 div_data+="</div>";
                 div_data+="<div class='form-group'><div class='row'>"
                 div_data+="<div class='col-lg-6'>";
-                div_data+="<label> Assignment Marks : </label><input type='text' name='assignment_marks' class='form-control' placeholder='Assignment Marks'>";
+                div_data+="<label> 平时成绩 : </label><input type='text' name='assignment_marks' class='form-control' placeholder='作业成绩'>";
                 div_data+="</div>";
                 div_data+="<div class='col-lg-6'>";
-                div_data+="<label> Exam Marks : </label><input type='text' name='exam_marks' class='form-control' placeholder='Exam Marks'>";
+                div_data+="<label> 考试成绩 : </label><input type='text' name='exam_marks' class='form-control' placeholder='考试成绩'>";
                 div_data+="</div>"
                 div_data+="</div></div>";
 
                 div_data+="<div class='form-group'>";
-                div_data+="<button id='save_attendance' class='btn btn-success btn-block' type='submit'>Save Result</button>";
+                div_data+="<button id='save_attendance' class='btn btn-success btn-block' type='submit'>保存</button>";
                 div_data+="</div>";
 
                 $("#student_data").html(div_data);

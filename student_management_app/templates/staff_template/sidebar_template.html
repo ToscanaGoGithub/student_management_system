@@ -4,7 +4,7 @@
     <a href="" class="brand-link">
       <img src="{% static "dist/img/AdminLTELogo.png" %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Django</span>
     </a>
 
     <!-- Sidebar -->
@@ -29,7 +29,7 @@
             <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Home
+                主页
               </p>
             </a>
           </li>
@@ -38,7 +38,7 @@
             <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Take Attendance
+                查看出勤
               </p>
             </a>
           </li>
@@ -47,7 +47,7 @@
             <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                View Update Attendance
+                更新出勤情况
               </p>
             </a>
           </li>
@@ -56,7 +56,7 @@
             <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Apply Leave
+                休假申请
               </p>
             </a>
           </li>
@@ -65,7 +65,7 @@
             <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Feedback
+                反馈信息
               </p>
             </a>
           </li>
@@ -74,25 +74,7 @@
             <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Add Result
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            {% url 'edit_student_result' as edit_student_result %}
-            <a href="{{ edit_student_result }}" class="nav-link {% if request.path == edit_student_result %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Edit Result
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            {% url 'start_live_classroom' as start_live_classroom %}
-            <a href="{{ start_live_classroom }}" class="nav-link {% if request.path == start_live_classroom %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Start Live Class Room
+                提交分数
               </p>
             </a>
           </li>
@@ -102,7 +84,7 @@
             <a href="{{ staff_all_notification }}" class="nav-link {% if request.path == staff_all_notification %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Notifications
+                通知
               </p>
             </a>
           </li>
