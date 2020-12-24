@@ -44,11 +44,11 @@
                     console.log(response);
                     if(response=="True"){
                         $(".email_error").remove();
-                        $("<span class='email_error' style='padding: 5px;color: red;font-weight: bold;'>Email Not Available</span>").insertAfter("#id_email");
+                        $("<span class='email_error' style='padding: 5px;color: red;font-weight: bold;'>无效邮箱</span>").insertAfter("#id_email");
                     }
                     else{
                         $(".email_error").remove();
-                        $("<span class='email_error' style='padding: 5px;color: green;font-weight: bold;'>Email Available</span>").insertAfter("#id_email");
+                        $("<span class='email_error' style='padding: 5px;color: green;font-weight: bold;'>有效邮箱</span>").insertAfter("#id_email");
                     }
                 })
                 .fail(function(){
@@ -74,11 +74,11 @@
                     console.log(response);
                     if(response=="True"){
                         $(".username_error").remove();
-                        $("<span class='username_error' style='padding: 5px;color: red;font-weight: bold;'>Username Not Available</span>").insertAfter("#id_username");
+                        $("<span class='username_error' style='padding: 5px;color: red;font-weight: bold;'>合法用户名</span>").insertAfter("#id_username");
                     }
                     else{
                         $(".username_error").remove();
-                        $("<span class='username_error' style='padding: 5px;color: green;font-weight: bold;'>Username Available</span>").insertAfter("#id_username");
+                        $("<span class='username_error' style='padding: 5px;color: green;font-weight: bold;'>非法用户名</span>").insertAfter("#id_username");
                     }
                 })
                 .fail(function(){

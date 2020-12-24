@@ -28,10 +28,10 @@ class EditResultViewClass(View):
             result.subject_assignment_marks=assignment_marks
             result.subject_exam_marks=exam_marks
             result.save()
-            messages.success(request, "Successfully Updated Result")
+            messages.success(request, "更新成功")
             return HttpResponseRedirect(reverse("edit_student_result"))
         else:
-            messages.error(request, "Failed to Update Result")
+            messages.error(request, "更新失败")
             form=EditResultForm(request.POST,staff_id=request.user.id)
             return render(request,"staff_template/edit_student_result.html",{"form":form})
 

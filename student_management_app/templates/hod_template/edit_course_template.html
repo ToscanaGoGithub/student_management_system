@@ -1,6 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% block page_title %}
-Edit Course |  Course ID : {{ course.id }}
+编辑科目 |  科目ID : {{ course.id }}
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -19,8 +19,8 @@ Edit Course |  Course ID : {{ course.id }}
                   {% csrf_token %}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Course Name </label>
-                    <input type="text" class="form-control" name="course" placeholder="Enter Course" value="{{ course.course_name }}">
+                    <label>科目名称 </label>
+                    <input type="text" class="form-control" name="course" placeholder="请输入科目" value="{{ course.course_name }}">
                     <input type="hidden"  name="course_id"  value="{{ course.id }}">
                   </div>
                    <div class="form-group">
@@ -40,7 +40,7 @@ Edit Course |  Course ID : {{ course.id }}
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Save Course</button>
+                  <button type="submit" class="btn btn-primary btn-block">保存</button>
                 </div>
               </form>
             </div>

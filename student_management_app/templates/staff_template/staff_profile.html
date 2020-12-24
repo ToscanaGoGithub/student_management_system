@@ -1,6 +1,6 @@
 {% extends 'staff_template/base_template.html' %}
 {% block page_title %}
-Edit Profile
+教师信息编辑
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,7 +11,7 @@ Edit Profile
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Profile</h3>
+                <h3 class="card-title">编辑列表</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -19,28 +19,28 @@ Edit Profile
                   {% csrf_token %}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Username</label>
+                    <label>用户名</label>
                     <input type="text" class="form-control" name="username" value="{{ user.username }}" disabled="disabled">
                   </div>
                   <div class="form-group">
-                    <label>Username</label>
+                    <label>邮箱</label>
                     <input type="text" class="form-control" name="username" value="{{ user.email }}" disabled="disabled">
                   </div>
-                   <div class="form-group">
+                   <div class="form-group" style="display: none">
                     <label>First Name</label>
-                    <input type="text" class="form-control" name="first_name" value="{{ user.first_name }}">
+                    <input type="hidden" class="form-control" name="first_name" value="{{ user.first_name }}">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style="display: none">
                     <label>Last Name</label>
-                    <input type="text" class="form-control" name="last_name" value="{{ user.last_name }}">
+                    <input type="hidden" class="form-control" name="last_name" value="{{ user.last_name }}">
                   </div>
                    <div class="form-group">
-                    <label>Address</label>
+                    <label>家庭住址</label>
                     <input type="text" class="form-control" name="address" value="{{ staff.address }}">
                   </div>
                    <div class="form-group">
-                    <label>Change Password?</label>
-                    <input type="text" class="form-control" name="password" placeholder="Fill Only If You want to Change Password">
+                    <label>是否修改密码？</label>
+                    <input type="text" class="form-control" name="password" placeholder="仅当您想更改密码时才填充">
                   </div>
                    <div class="form-group">
                       {% if messages %}
@@ -59,7 +59,7 @@ Edit Profile
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Save Profile</button>
+                  <button type="submit" class="btn btn-primary btn-block">保存</button>
                 </div>
               </form>
             </div>

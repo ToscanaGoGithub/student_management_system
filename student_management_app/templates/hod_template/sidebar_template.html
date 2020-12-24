@@ -77,7 +77,7 @@
             <a href="{% url 'add_course' %}" class="nav-link {% if request.path == add_course %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                课程添加
+                科目添加
               </p>
             </a>
           </li>
@@ -87,7 +87,7 @@
             <a href="{% url 'manage_course' %}" class="nav-link {% if request.path == manage_course %} active {% endif %} {% if request.path == edit_course %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-               课程管理
+               科目管理
               </p>
             </a>
           </li>
@@ -96,7 +96,7 @@
             <a href="{% url 'add_subject' %}" class="nav-link {% if request.path == add_subject %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                学科添加
+                课程添加
               </p>
             </a>
           </li>
@@ -106,7 +106,7 @@
             <a href="{% url 'manage_subject' %}" class="nav-link {% if request.path == manage_subject %} active {% endif %} {% if request.path == edit_subject %} active {% endif %} ">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                学科管理
+                课程管理
               </p>
             </a>
           </li>
@@ -115,7 +115,7 @@
             <a href="{% url 'manage_session' %}" class="nav-link {% if request.path == manage_session %} active {% endif %} ">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                学年管理
+                添加学期
               </p>
             </a>
           </li>
@@ -153,33 +153,6 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 教师请假
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            {% url 'admin_view_attendance' as admin_view_attendance %}
-             <a href="{% url 'admin_view_attendance' %}" class="nav-link {% if request.path == admin_view_attendance %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                出勤管理
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            {% url 'admin_send_notification_staff' as admin_send_notification_staff %}
-             <a href="{% url 'admin_send_notification_staff' %}" class="nav-link {% if request.path == admin_send_notification_staff %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Send Staff Notification
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            {% url 'admin_send_notification_student' as admin_send_notification_student %}
-             <a href="{% url 'admin_send_notification_student' %}" class="nav-link {% if request.path == admin_send_notification_student %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Send Student Notification
               </p>
             </a>
           </li>

@@ -1,6 +1,6 @@
 {% extends 'hod_template/base_template.html' %}
 {% block page_title %}
-Student Feedback
+学生反馈
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,24 +11,24 @@ Student Feedback
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Student Feedback</h3>
+                <h3 class="card-title">详情</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
                 <div class="table">
                     <table class="table">
                         <tr>
-                            <th>ID</th>
-                            <th>Student ID</th>
-                            <th>Student Name</th>
-                            <th>Student Session</th>
-                            <th>Message</th>
-                            <th>Sended On</th>
-                            <th>Reply</th>
+
+                            <th>学生编号</th>
+                            <th>学生姓名</th>
+                            <th>学期</th>
+                            <th>消息内容</th>
+                            <th>反馈日期</th>
+                            <th>操作</th>
                         </tr>
                         {% for feedback in feedbacks %}
                         <tr>
-                            <td>{{ feedback.id }}</td>
+
                             <td>{{ feedback.student_id.admin.id }}</td>
                             <td>{{ feedback.student_id.admin.first_name }} {{ feedback.student_id.admin.last_name }}</td>
                             <td>{{ feedback.student_id.session_year_id.session_start_year }} - {{ feedback.student_id.session_year_id.session_end_year }}</td>
@@ -36,7 +36,7 @@ Student Feedback
                             <td>{{ feedback.created_at }}</td>
                             <td>
                                 {% if feedback.feedback_reply == "" %}
-                                <button class="btn btn-success reply_open_modal" data-toggle="modal" data-target="#reply_modal">Reply</button>
+                                <button class="btn btn-success reply_open_modal" data-toggle="modal" data-target="#reply_modal">回复</button>
                                 {% else %}
                                 {{ feedback.feedback_reply }}
                                 {% endif %}

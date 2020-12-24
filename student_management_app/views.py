@@ -109,10 +109,10 @@ def do_admin_signup(request):
     try:
         user=CustomUser.objects.create_user(username=username,password=password,email=email,user_type=1)
         user.save()
-        messages.success(request,"Successfully Created Admin")
+        messages.success(request,"成功创建管理员")
         return HttpResponseRedirect(reverse("show_login"))
     except:
-        messages.error(request,"Failed to Create Admin")
+        messages.error(request,"管理员创建失败")
         return HttpResponseRedirect(reverse("show_login"))
 
 def do_staff_signup(request):
@@ -125,10 +125,10 @@ def do_staff_signup(request):
         user=CustomUser.objects.create_user(username=username,password=password,email=email,user_type=2)
         user.staffs.address=address
         user.save()
-        messages.success(request,"Successfully Created Staff")
+        messages.success(request,"成功创建教师")
         return HttpResponseRedirect(reverse("show_login"))
     except:
-        messages.error(request,"Failed to Create Staff")
+        messages.error(request,"创建教师失败")
         return HttpResponseRedirect(reverse("show_login"))
 
 def do_signup_student(request):
@@ -158,7 +158,7 @@ def do_signup_student(request):
     user.students.gender = sex
     user.students.profile_pic = profile_pic_url
     user.save()
-    messages.success(request, "Successfully Added Student")
+    messages.success(request, "成功添加学生")
     return HttpResponseRedirect(reverse("show_login"))
     #except:
      #   messages.error(request, "Failed to Add Student")

@@ -1,4 +1,5 @@
 # student_management_system_in_django
+
 student_management_system_in_django
 
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/hackstarsj/student_management_system_part_11/raw/master/LICENSE)
